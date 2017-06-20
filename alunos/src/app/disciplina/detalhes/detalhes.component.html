@@ -1,0 +1,22 @@
+<p-panel>
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <span class="ui-panel-title">Disciplina</span>
+            <p-splitButton [style]="{'float':'right'}" label="Salvar" (onClick)="salvar()" [model]="items"></p-splitButton>
+        </div>
+    </p-header>
+    <h3>Nome</h3>
+    <input id="in1" type="text" size="30" pInputText [(ngModel)]="selecionado.nome">
+    <h3>Aluno</h3>
+</p-panel>
+
+<p-autoComplete name="aluno" [(ngModel)]="aluno" [suggestions]="alunos" (completeMethod)="filtrarAlunos($event)"
+    [size]="30" [minLength]="1" [dropdown]="true" (onDropdownClick)="atualizaAlunos($event)" field="nome">
+</p-autoComplete>
+ <button pButton type="button" label="Inserir" icon="fa-folder-open" (click)="inserirAluno()"></button>
+
+
+<p-dataTable [value]="selecionado.itens" [editable]="true">
+    <p-column field="aluno.nome" header="Aluno"> </p-column>
+    
+</p-dataTable>

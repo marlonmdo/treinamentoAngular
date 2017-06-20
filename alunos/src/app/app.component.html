@@ -1,0 +1,12 @@
+<h1>
+  {{title}}
+</h1>
+<p-toolbar>
+    <div class="ui-toolbar-group-left">
+        <button pButton type="button" label="Dashboard" icon="fa-plus"  [routerLink]="['./dashboard']"></button>
+        <button pButton type="button" label="Curso" icon="fa-folder-open" [routerLink]="['./curso']"></button>
+        <button pButton type="button" label="Disciplina" icon="fa-folder-open" [routerLink]="['./disciplina']"></button>
+        <button pButton type="button" label="Alunos" icon="fa-folder-open" [routerLink]="['./aluno']"></button>
+    </div>
+</p-toolbar>
+<router-outlet></router-outlet>
